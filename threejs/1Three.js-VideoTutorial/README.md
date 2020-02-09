@@ -13,3 +13,11 @@ Three.js目前已经作为一个npm模块来进行了发布，详情请参阅：
 2. ES6Module规范（必须在最开始引入）引入 或  CommonJS规范（NODE）引入
 3. webpack编译打包，再引入
 
+中文文档：
+http://wjceo.com/three.js/docs/#manual/zh/introduction/Creating-a-scene
+gitee参考：
+https://gitee.com/break_egg/Three.js-VideoTutorial
+博客参考：
+https://www.wjceo.com/
+https://blog.csdn.net/qq_30100043/article/details/74202841
+https://blog.csdn.net/qq_30100043/article/details/82014971
