@@ -46,7 +46,7 @@ document.body.appendChild(renderer.domElement);
 // 创建一个立方体
 // 创建一个立方体,需要一个BoxGeometry（立方体）对象 => 这个对象包含了一个立方体中所有的顶点（vertices）和面（faces）
 // Geometry:几何
-var geometry = new THREE.BoxGeometry(1, 1, 1);
+// var geometry = new THREE.BoxGeometry(1, 1, 1);
 
 // 材质 => 颜色
 // Mesh:网格; Material:材料、材质

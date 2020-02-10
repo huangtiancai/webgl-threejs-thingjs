@@ -14,7 +14,7 @@ function init() {
   // 实例化相机
   camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
   // 移动相机位置
-  camera.position.set(0, 0, 2);
+  camera.position.set(0, 0, 3);
 
   // 创建模型
   // width  — X轴上面的宽度，默认值为1
@@ -122,7 +122,15 @@ function test() {
   console.log(mesh.parent == scene); // true
 
   // 修改3d对象的位置，大小和转向
-
-
+  // 1.修改位置方式
+  // 通过设置模型的position属性进行修改模型的当前位置，具体方法有以下几种：
+  // 1）单独设置每个方向的属性
+  // mesh.position.x = 3;   // 将模型的位置调整到x正轴距离原点为3的位置 
+  // mesh.position.y += 5;  // 将模型的y轴位置以当前的位置向上移动5个单位
+  // mesh.position.z -= 6;
+  // 2）直接一次性设置所有的
+  // mesh.position.set(3, 5, -6); //  //直接将模型的位置设置在x轴为3，y轴为5，z轴为-6的位置
+  // 3）直接重新赋值一个新的对象
+  // mesh.position = new THREE.
 
 }
