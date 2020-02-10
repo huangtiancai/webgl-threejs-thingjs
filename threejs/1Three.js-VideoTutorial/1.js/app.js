@@ -50,10 +50,10 @@ var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
 
 // Mesh（网格）
 // 网格包含一个几何体以及作用在此几何体上的材质
-var cube = new THREE.Mesh(geometry, material);
+var mesh = new THREE.Mesh(geometry, material);
 
 // 将网格对象放入到我们的场景中，并让它在场景中自由移动
-scene.add(cube);
+scene.add(mesh);
 // 默认情况下，当我们调用scene.add()的时候，物体将会被添加到(0,0,0)坐标
 // 但将使得摄像机和立方体彼此在一起，为了防止这种情况的发生，只需要将摄像机稍微向外移动一些即可
 camera.position.z = 3;
@@ -69,8 +69,8 @@ function animate() {
   requestAnimationFrame(animate);
   // 使立方体动起来
   // 这段代码每帧都会执行（正常情况下是60次/秒）
-  cube.rotation.x += 0.01;
-  cube.rotation.y += 0.01;
+  mesh.rotation.x += 0.01;
+  mesh.rotation.y += 0.01;
   // 使用渲染器渲染
   renderer.render(scene, camera);
 }
