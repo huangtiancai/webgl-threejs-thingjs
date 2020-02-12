@@ -15,25 +15,31 @@
                          => scene内也可以添加它的3d对象 => 嵌套
 
 在Three.js中，为了方便操作，将所有`3d对象`共同的内容抽象成了一个`基类`，就是`THREE.Object3D`
-
-3. THREE.Object3D
-Three.js将每个能够直接`添加到场景内的对象`都继承至一个`基类`-`THREE.Object3D` => 将继承至这个基类的对象称为`3d对象`
-
-判断一个对象是否继承THREE.Object3D
-```
-判断一个对象是否是继承至THREE.Object3D 继承返回 true 否则返回false
-scene,camera,geomerty,mesh => 继承
-material,renderer,stats    => 不继承
+...
 
 
+3. 使用dat.GUI插件实现页面调试
+目前共使用两款插件：
+- stats
+- dat.gui
+
+将插件的源码引入到页面当中，cdn 或 直接引入js
+```javascript
+<script src="../build/three.js"></script>
+<script src="../build/stats.min.js"></script>
+<script src="../build/dat.gui.min.js"></script>
 ```
 
-向场景内添加一个3d对象
-```
-scene.add(mesh);  // 将网格添加到场景
+在浏览器中使用ES module
+```javascript
+<script type="module">
+   import * as THREE from '../build/three.module.js';
+   import Stats from '../build/stats.module.js';
+   import { GUI } from '../build/dat.gui.module.js';
+
+   // JS代码
+
+</script>
 ```
 
-也可以将一个3d对象添加到另一个3d对象里面
-```
-parent.add(child);
-```
+stats、 dat.gui两款插件具体使用 => [index](./index.html)
