@@ -37,3 +37,5 @@ Three.js内置几何体
 BoxGeometry(
    width : 浮点类型, height : 浮点类型, depth : 浮点类型, 
    widthSegments : 整数类型, heightSegments : 整数类型, depthSegment: 整数类型)
+   
+2. 
