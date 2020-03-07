@@ -73,6 +73,12 @@ export const constantRoutes = [
         name: 'Tree',
         component: () => import('@/views/tree/index'),
         meta: { title: 'Tree', icon: 'tree' }
+      },
+      {
+        path: 'spacewaves',
+        name: 'Spacewaves',
+        component: () => import('@/views/spacewaves/index'),
+        meta: { title: '空间波浪特效', icon: 'tree' }
       }
     ]
   },
@@ -164,7 +170,7 @@ export const constantRoutes = [
 ]
 
 const createRouter = () => new Router({
-  // mode: 'history', // require service support
+  mode: 'history', // require service support
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRoutes
 })
