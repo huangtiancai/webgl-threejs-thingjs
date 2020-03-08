@@ -1,20 +1,25 @@
 <template>
-  <div id="indexLizi" />
+  <div id="spacewaves">
+  </div>
 </template>
 
 <script>
 import * as THREE from "three";
+import * as dat from 'dat.gui';
+let Stats = require('stats.js');
 
 export default {
   name: "Spacewaves",
   data() {
     return {
+      container: null,
       scene: null,
       camera: null,
       renderer: null,
       star: null,
       stars: null,
-      starGeo: null
+      starGeo: null,
+      stats: null
     };
   },
   mounted() {
@@ -32,11 +37,11 @@ export default {
       this.renderer = new THREE.WebGLRenderer();
       this.renderer.setSize(window.innerWidth, window.innerHeight);
 
-      // document.getElementById('indexLizi').appendChild(this.renderer.domElement);
-
       const container = document.createElement('div');
       container.appendChild(this.renderer.domElement);
-      document.getElementById('indexLizi').appendChild(container)
+
+      document.getElementById('spacewaves').appendChild(container);
+
 
       this.starGeo = new THREE.Geometry();
       for (let i = 0; i < 6000; i++) {
@@ -60,6 +65,12 @@ export default {
       this.stars = new THREE.Points(this.starGeo, starMaterial);
       this.scene.add(this.stars);
 
+      // 性能测框
+      this.stats = new Stats();
+      // 把对象内生成的dom添加到页面当中
+      container.appendChild(this.stats.dom);
+
+      // 浏览器窗口控制
       window.addEventListener("resize", this.onWindowResize, false);
     },
     animate: function () {
@@ -77,6 +88,9 @@ export default {
 
       this.renderer.render(this.scene, this.camera);
       requestAnimationFrame(this.animate);
+
+      // 更新性能插件
+      this.stats.update();
     },
     onWindowResize: function () {
       this.camera.aspect = window.innerWidth / window.innerHeight;
@@ -88,20 +102,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-body {
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  /* background: black; */
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
+// body {
+//   width: 100vw;
+//   height: 100vh;
+//   margin: 0;
+//   /* background: black; */
+//   overflow: hidden;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// canvas {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   z-index: -1;
+// }
 </style>

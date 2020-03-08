@@ -50,6 +50,7 @@
         starGeo.vertices.push(star);
       }
 
+
       let sprite = new THREE.TextureLoader().load('star.png');
       let starMaterial = new THREE.PointsMaterial({
         color: 0xaaaaaa,
@@ -76,6 +77,7 @@
       renderer.render(scene, camera);
       requestAnimationFrame(animate);
     }
+
 
     // 调用
     init();
