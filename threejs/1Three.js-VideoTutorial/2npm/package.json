@@ -10,7 +10,7 @@
   "author": "htc",
   "license": "ISC",
   "dependencies": {
-    "three": "^0.106.2"
+    "three": "^0.125.0"
   },
   "devDependencies": {
     "webpack": "^4.41.5",
